@@ -50,32 +50,36 @@ class WeatherBox extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                     getWeatherIcon(weather!.icon),
                     Container(
-                        margin: const EdgeInsets.all(5.0),
-                        child: Text(
-                          weather!.description.capitalizeFirstOfEach,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 16,
-                              color: Colors.white),
-                        )),
+                      margin: const EdgeInsets.all(5.0),
+                      child: Text(
+                        weather!.description.capitalizeFirstOfEach,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 16,
+                            color: Colors.white),
+                      ),
+                    ),
                     Container(
-                        margin: const EdgeInsets.all(5.0),
-                        child: Text(
-                          "H:${weather!.high.toInt()}° L:${weather!.low.toInt()}°",
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 13,
-                              color: Colors.white),
-                        )),
-                  ])),
-              Column(children: <Widget>[
+                      margin: const EdgeInsets.all(5.0),
+                      child: Text(
+                        "H:${weather!.high.toInt()}° L:${weather!.low.toInt()}°",
+                        textAlign: TextAlign.left,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 13,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Column(children: [
                 Text(
                   "${weather!.temp.toInt()}°",
                   textAlign: TextAlign.left,
